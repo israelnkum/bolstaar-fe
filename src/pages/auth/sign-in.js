@@ -1,0 +1,51 @@
+import React from 'react'
+import AuthLayout from './auth-layout'
+import TlaFormWrapper from '../../components/tla-form-wrapper'
+import { Button, Form, Input } from 'antd'
+import AuthBottomLink from './auth-bottom-link'
+import { Link } from 'react-router-dom'
+
+function SignIn () {
+  return (
+        <AuthLayout pageTitle={'Sign in to your account'}>
+            <div>
+                <TlaFormWrapper buttonText={'Sign in'}>
+                    <Form.Item name="email" label="Email*"
+                               rules={[
+                                 {
+                                   required: true,
+                                   message: 'Phone is Required'
+                                 }
+                               ]}>
+                        <Input size={'large'} placeholder={'Enter your email'}/>
+                    </Form.Item>
+                    <Form.Item name="password"
+                               label={'Password'}
+                               rules={[
+                                 { required: true, message: 'Password is required!' },
+                                 { min: 8, message: '' }
+                               ]}>
+                        <Input.Password
+                            size={'large'}
+                            type={'password'}
+                            placeholder="••••••••"/>
+                    </Form.Item>
+                    <div className={'flex items-center justify-end mb-4'}>
+                        <Link className={'text-primary-700'} to={'/forgot-password'}>Forgot Password</Link>
+                    </div>
+                </TlaFormWrapper>
+                <div className={'mb-3'}>
+                    <a>
+                        <Button size={'large'} className={'mt-4 flex justify-center items-center gap-x-3'} block>
+                            <div className={'bg-google-icon h-6 w-6'}></div>
+                            Sign up with Google
+                        </Button>
+                    </a>
+                </div>
+                <AuthBottomLink text={'Don’t have an account?'} link={'/sign-up'} linkText={'Sign up'}/>
+            </div>
+        </AuthLayout>
+  )
+}
+
+export default SignIn

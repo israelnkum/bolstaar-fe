@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Open Sans", sans-serif;
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@layer component {
+    .auth-layout label {
+        @apply !text-gray-700;
+    }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+    .auth-layout input::placeholder {
+        @apply !text-gray-500 !text-base;
+    }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+    .auth-layout input {
+        @apply !h-[44px];
+    }
 
-.App-link {
-  color: #61dafb;
-}
+    .auth-layout .ant-input-affix-wrapper >input.ant-input {
+        @apply !h-[30px];
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    .btn-success {
+        @apply !bg-success-100 !text-white-000 ring-1 ring-success-100
+        hover:bg-success-100 hover:text-white-000 !border-0;
+    }
+
+    .ant-form-item {
+        @apply !mb-4;
+    }
+
+    .ant-form-item-label {
+        @apply !pb-1.5;
+    }
+
+    .ant-form-item.bolstaar-check {
+        @apply !mb-0;
+    }
 }
