@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +7,7 @@
 
 @layer base {
     html {
-        font-family: "Open Sans", sans-serif;
+        font-family: "Poppins", sans-serif;
     }
 }
 
@@ -32,6 +33,16 @@
         hover:bg-success-100 hover:text-white-000 !border-0;
     }
 
+    .btn-success-landing {
+        @apply !bg-success-100 !text-white-000 ring-1 ring-success-100
+        hover:bg-success-100 hover:text-white-000 !border-0 !font-bold
+        py-3 !h-12 !w-[151px];
+    }
+
+    .btn-light {
+        @apply !bg-white-000 text-success-100 px-6 py-3.5 rounded-lg;
+    }
+
     .ant-form-item {
         @apply !mb-4;
     }
@@ -42,5 +53,43 @@
 
     .ant-form-item.bolstaar-check {
         @apply !mb-0;
+    }
+
+    .bolstaar-search {
+        @apply !w-[493px];
+    }
+
+    .bolstaar-search .ant-input-affix-wrapper {
+        @apply !rounded-lg;
+    }
+
+    .bolstaar-search .ant-input-group-addon {
+        @apply !hidden;
+    }
+
+    .ant-input-suffix, .ant-input-prefix {
+        @apply !text-gray-400;
+    }
+
+    .l-item {
+        @apply flex items-center before:pr-5 text-black-100 text-[18px];
+    }
+
+    .l-item::before {
+        @apply pt-2;
+        content: url("assets/images/rent-a-tool/check.svg");
+    }
+
+    .ant-collapse {
+        font-family: Poppins, sans-serif !important;
+        @apply !text-[18px] !text-black-100;
+    }
+
+    .email-input {
+        @apply !rounded-[40px] !bg-black-300 !text-white-000 h-12;
+    }
+
+    .email-input::placeholder {
+        @apply !text-white-000;
     }
 }

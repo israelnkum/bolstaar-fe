@@ -14,9 +14,26 @@ module.exports = {
         ]
       },
       backgroundImage: {
-        'auth-bg': 'url("assets/images/auth-img.svg")',
+        'auth-bg': 'url("assets/images/auth-img.png")',
+        'hero-image': 'url("assets/images/hero-image.JPG")',
         logo: 'url("assets/images/logo.svg")',
-        'google-icon': 'url("assets/images/google.svg")'
+        'google-icon': 'url("assets/images/google.svg")',
+        'wavy-line': 'url("assets/images/wavy-line.svg")',
+        clock: 'url("assets/images/what-to-expect/clock.svg")',
+        finance: 'url("assets/images/what-to-expect/finance.svg")',
+        laptop: 'url("assets/images/what-to-expect/laptop.svg")',
+        secured: 'url("assets/images/what-to-expect/secured.svg")',
+        'coloured-banner': 'url("assets/images/rent-a-tool/header.svg")',
+        locations: 'url("assets/images/rent-a-tool/locations.svg")',
+        'reviews-bg': 'url("assets/images/reviews/bg.svg")',
+        farmer: 'url("assets/images/reviews/farmer.png")'
+      },
+      content: {
+        'check-mark': 'url("assets/images/rent-a-tool/check.svg")'
+      },
+      boxShadow: {
+        '3xl': '0px 0px 88px rgba(85, 85, 85, 0.25);',
+        '4xl': '51px 51px 84px rgba(135, 140, 189, 0.06)'
       }
     }
   },

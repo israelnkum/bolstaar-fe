@@ -22,7 +22,7 @@ function Register () {
                                rules={[
                                  {
                                    required: true,
-                                   message: 'Phone is Required'
+                                   message: 'Email is Required'
                                  }
                                ]}>
                         <Input size={'large'} placeholder={'Enter your email'}/>
