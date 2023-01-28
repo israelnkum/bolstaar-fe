@@ -22,10 +22,18 @@ module.exports = {
         clock: 'url("assets/images/what-to-expect/clock.svg")',
         finance: 'url("assets/images/what-to-expect/finance.svg")',
         laptop: 'url("assets/images/what-to-expect/laptop.svg")',
-        secured: 'url("assets/images/what-to-expect/secured.svg")'
+        secured: 'url("assets/images/what-to-expect/secured.svg")',
+        'coloured-banner': 'url("assets/images/rent-a-tool/header.svg")',
+        locations: 'url("assets/images/rent-a-tool/locations.svg")',
+        'reviews-bg': 'url("assets/images/reviews/bg.svg")',
+        farmer: 'url("assets/images/reviews/farmer.png")'
+      },
+      content: {
+        'check-mark': 'url("assets/images/rent-a-tool/check.svg")'
       },
       boxShadow: {
-        '3xl': '0px 0px 88px rgba(85, 85, 85, 0.25);'
+        '3xl': '0px 0px 88px rgba(85, 85, 85, 0.25);',
+        '4xl': '51px 51px 84px rgba(135, 140, 189, 0.06)'
       }
     }
   },

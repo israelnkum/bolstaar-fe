@@ -5,8 +5,8 @@ import { FiSearch, FiHelpCircle } from 'react-icons/fi'
 function SearchTools () {
   return (
         <Form layout="vertical">
-            <div className={'rounded-lg bg-white-000 h-[130px] flex justify-between mx-[167px] items-center' +
-                ' shadow-3xl -mt-[75px] px-8 gap-x-6'}>
+            <div className={'rounded-lg bg-white-000 h-[130px] flex justify-between w-[1163px] items-center' +
+                ' shadow-3xl -mt-[75px] px-8 gap-x-6 mx-auto'}>
                 <div>
                     <Form.Item label={'Name of tool'}>
                         <Input.Search

@@ -71,6 +71,25 @@
         @apply !text-gray-400;
     }
 
-    input {
+    .l-item {
+        @apply flex items-center before:pr-5 text-black-100 text-[18px];
+    }
+
+    .l-item::before {
+        @apply pt-2;
+        content: url("assets/images/rent-a-tool/check.svg");
+    }
+
+    .ant-collapse {
+        font-family: Poppins, sans-serif !important;
+        @apply !text-[18px] !text-black-100;
+    }
+
+    .email-input {
+        @apply !rounded-[40px] !bg-black-300 !text-white-000 h-12;
+    }
+
+    .email-input::placeholder {
+        @apply !text-white-000;
     }
 }

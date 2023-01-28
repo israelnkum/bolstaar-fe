@@ -1,10 +1,11 @@
 import React from 'react'
+import WavyLine from '../../components/wavy-line'
 
 function InfoSection () {
   return (
         <div className={'bg-white'}>
-            <div className={'mx-auto bg-wavy-line bg-contain bg-no-repeat h-2 w-[104px] mt-[130px]'}>
-                &nbsp;
+            <div className={'flex justify-center'}>
+                <WavyLine/>
             </div>
 
             <div className={'text-center'}>
