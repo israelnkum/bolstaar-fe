@@ -19,11 +19,6 @@ function ContactUs () {
                 <RiInstagramFill/>
                 <BsTwitter/>
             </div>
-            <div>
-                <p className={'text-xs'}>
-                    Copyright © All rights Reserved
-                </p>
-            </div>
         </div>
   )
 }

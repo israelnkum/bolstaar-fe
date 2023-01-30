@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 function ShadowButton ({ buttonText, buttonType }) {
   return (
-        <div className={'relative'}>
+        <div className={'relative w-full'}>
             <Button htmlType={buttonType} className={'btn-success-landing'} size={'large'}>
                 {buttonText}
             </Button>
