@@ -36,7 +36,7 @@
     .btn-success-landing {
         @apply !bg-success-100 !text-white-000 ring-1 ring-success-100
         hover:bg-success-100 hover:text-white-000 !border-0 !font-bold
-        py-3 !h-12 !w-[151px];
+        py-3 !h-12 !w-full md:!w-[151px];
     }
 
     .btn-light {
@@ -56,7 +56,7 @@
     }
 
     .bolstaar-search {
-        @apply !w-[493px];
+        /*@apply w-full md:!w-[493px];*/
     }
 
     .bolstaar-search .ant-input-affix-wrapper {
@@ -86,10 +86,32 @@
     }
 
     .email-input {
-        @apply !rounded-[40px] !bg-black-300 !text-white-000 h-12;
+        @apply !w-full md:!w-[407px] ;
     }
 
-    .email-input::placeholder {
+    .email-input input {
+        @apply !bg-black-300 !text-white-000 !border-0;
+    }
+
+    .email-input .ant-input-suffix {
+        @apply bg-success-300 !w-[60px] relative !border-0;
+        border-radius: 50px;
+        padding: 20px;
+    }
+
+    .email-input.ant-input-affix-wrapper {
+        @apply !bg-black-300 !p-0 !border-0;
+    }
+
+    .email-input.ant-input-affix-wrapper >input.ant-input {
+       @apply !rounded-[50px] !pl-3 !border-0;
+    }
+
+    .email-input input::placeholder {
         @apply !text-white-000;
+    }
+
+    .search-col-item {
+        @apply h-full md:h-[130px] !flex !items-center;
     }
 }

@@ -1,52 +1,43 @@
 import React from 'react'
-import { Button, DatePicker, Form, Input } from 'antd'
-import { FiSearch, FiHelpCircle } from 'react-icons/fi'
+import { Col, DatePicker, Form, Input, Row } from 'antd'
+import { FiHelpCircle, FiSearch } from 'react-icons/fi'
+import ShadowButton from '../../components/shadow-button'
 
 function SearchTools () {
   return (
         <Form layout="vertical">
-            <div className={'rounded-lg bg-white-000 h-[130px] flex justify-between w-[1163px] items-center' +
-                ' shadow-3xl -mt-[75px] px-8 gap-x-6 mx-auto'}>
-                <div>
-                    <Form.Item label={'Name of tool'}>
-                        <Input.Search
-                            style={{ width: '100%' }}
-                            size={'large'}
-                            placeholder={'Which tool do you want to rent ?'}
-                            className={'bolstaar-search'}
-                            prefix={<FiSearch/>}
-                            suffix={<FiHelpCircle/>}/>
-                    </Form.Item>
-                </div>
-                <div className={'w-[190px]'}>
-                    <Form.Item label={'Pickup date'}>
-                        <DatePicker
-                            style={{ width: '100%' }}
-                            size={'large'}/>
-                    </Form.Item>
-                </div>
-                <div className={'w-[190px]'}>
-                    <Form.Item label={'Pickup date'}>
-                        <DatePicker
-                            style={{ width: '100%' }}
-                            size={'large'}/>
-                    </Form.Item>
-                </div>
-                <div>
-                    <div className={'relative'}>
-                        <Button className={'btn-success-landing'} size={'large'}>
-                            Search now
-                        </Button>
-                        <div className={'absolute'} style={{
-                          background: 'rgba(56, 245, 86, 0.14)',
-                          filter: 'blur(27px)',
-                          borderRadius: '10px',
-                          height: '100%',
-                          width: '100%',
-                          left: '10px'
-                        }}>&nbsp;</div>
-                    </div>
-                </div>
+            <div className={'rounded-lg bg-white-000 h-full md:h-[130px] shadow-3xl mt-[-220px] md:mt-[-70px]' +
+                ' py-4 md:py-0 mx-0 md:mx-[138px] px-[18px]'}>
+                <Row gutter={24} align={'middle'} justify={'center'}>
+                    <Col xs={24} sm={24} md={24} lg={10} className={'search-col-item'}>
+                        <Form.Item label={'Name of tool'} className={'w-full'}>
+                            <Input.Search
+                                style={{ width: '100%' }}
+                                size={'large'}
+                                placeholder={'Which tool do you want to rent ?'}
+                                className={'bolstaar-search'}
+                                prefix={<FiSearch/>}
+                                suffix={<FiHelpCircle/>}/>
+                        </Form.Item>
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={4} className={'search-col-item'}>
+                        <Form.Item label={'Pickup date'}>
+                            <DatePicker
+                                style={{ width: '100%' }}
+                                size={'large'}/>
+                        </Form.Item>
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={4} className={'search-col-item'}>
+                        <Form.Item label={'Return date'}>
+                            <DatePicker
+                                style={{ width: '100%' }}
+                                size={'large'}/>
+                        </Form.Item>
+                    </Col>
+                    <Col xs={24} sm={12} md={8} lg={4} className={'search-col-item'}>
+                        <ShadowButton buttonText={'Search now'} buttonType={'submit'}/>
+                    </Col>
+                </Row>
             </div>
         </Form>
   )
