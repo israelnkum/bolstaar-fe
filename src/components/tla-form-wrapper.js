@@ -1,17 +1,16 @@
 import React from 'react'
 import { Button, Form } from 'antd'
-import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { TlaError, TlaSuccess } from '../utils/messages'
+import { useNavigate } from 'react-router-dom'
 
 function TlaFormWrapper (props) {
   const navigate = useNavigate()
   const [form] = Form.useForm()
-  const { onSubmit, initialValues, children, file, btnBlock, buttonText } = props
+  const { onSubmit, initialValues, children, file, btnBlock, buttonText, afterSubmit } = props
 
   const submit = (values) => {
     const formData = new FormData()
-    values.id !== 0 && formData.append('_method', 'PUT')
 
     // eslint-disable-next-line no-unused-expressions
     file !== null ? formData.append('file', file) : ''
@@ -25,9 +24,9 @@ function TlaFormWrapper (props) {
     onSubmit(formData).then(() => {
       TlaSuccess()
       form.resetFields()
-      navigate(-1)
+      afterSubmit && navigate(afterSubmit)
     }).catch((error) => {
-      TlaError(error.response.data.message)
+      TlaError(error.response.data.error.message)
     })
   }
 
@@ -58,7 +57,8 @@ function TlaFormWrapper (props) {
 TlaFormWrapper.defaultProps = {
   file: null,
   width: 520,
-  btnBlock: true
+  btnBlock: true,
+  afterSubmit: null
 }
 
 TlaFormWrapper.propTypes = {
@@ -70,6 +70,10 @@ TlaFormWrapper.propTypes = {
   file: PropTypes.any,
   width: PropTypes.any,
   btnBlock: PropTypes.bool,
+  afterSubmit: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   children: PropTypes.any
 }
 

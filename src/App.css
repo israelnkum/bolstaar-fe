@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+@import "./assets/css/tla-modal.css";
+/*@import '~antd/dist/reset.css';*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -113,5 +114,18 @@
 
     .search-col-item {
         @apply h-full md:h-[130px] !flex !items-center;
+    }
+
+    .ant-breadcrumb li {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        @apply !text-success-100;
+    }
+
+    .ant-tabs-tab-btn:hover {
+        @apply !text-success-100;
     }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, DatePicker, Form, Input, Row } from 'antd'
 import { FiHelpCircle, FiSearch } from 'react-icons/fi'
 import ShadowButton from '../../components/shadow-button'
+import { Link } from 'react-router-dom'
 
 function SearchTools () {
   return (
@@ -35,7 +36,9 @@ function SearchTools () {
                         </Form.Item>
                     </Col>
                     <Col xs={24} sm={12} md={8} lg={4} className={'search-col-item'}>
-                        <ShadowButton buttonText={'Search now'} buttonType={'submit'}/>
+                        <Link to={'/categories/wallington-boots'}>
+                            <ShadowButton buttonText={'Search now'} buttonType={'submit'}/>
+                        </Link>
                     </Col>
                 </Row>
             </div>
