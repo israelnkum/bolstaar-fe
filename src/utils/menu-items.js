@@ -4,8 +4,16 @@ export const LandingPageMenus = [
     link: '/'
   },
   {
-    title: 'Features',
-    link: '/features'
+    title: 'Products',
+    link: '/products'
+  },
+  {
+    title: 'Careers',
+    link: '/careers'
+  },
+  {
+    title: 'Training',
+    link: '/training'
   },
   {
     title: 'Contact Us',

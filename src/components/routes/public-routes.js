@@ -5,6 +5,12 @@ import Register from '../../pages/auth/register'
 import ForgotPassword from '../../pages/auth/forgot-password'
 import ResetPassword from '../../pages/auth/reset-password'
 import Landing from '../../pages/landing'
+import SingleProduct from '../../pages/SingleProduct'
+import NoResults from '../../pages/SingleProduct/no-results'
+import Checkout from '../../pages/checkout'
+import SearchResultLayout from '../../pages/SingleProduct/search-result-layout'
+import Products from '../../pages/products'
+import SearchResults from '../../pages/products/search-results'
 
 export const PublicRoutes = () => {
   return (
@@ -15,6 +21,13 @@ export const PublicRoutes = () => {
                 <Route element={<Register/>} path={'/sign-up'}/>
                 <Route element={<ForgotPassword/>} path={'/forgot-password'}/>
                 <Route element={<ResetPassword/>} path={'/reset-password'}/>
+                <Route path={'/products'} element={<SearchResultLayout/>}>
+                    <Route element={<Products/>} index/>
+                    <Route element={<SearchResults/>} path={'search-results'}/>
+                    <Route element={<SingleProduct/>} path={':item'}/>
+                    <Route element={<Checkout/>} path={':item/checkout'}/>
+                </Route>
+                <Route element={<NoResults/>} path={'/nothing-found'}/>
                 <Route path={'*'} element={<>not found</>}>
                 </Route>
             </Routes>

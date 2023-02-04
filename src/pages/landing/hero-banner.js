@@ -1,7 +1,7 @@
 import React from 'react'
-import DesktopNav from './navigation/desktop-nav'
+import DesktopNav from '../../components/navigation/desktop-nav'
 import SearchTools from './search-tools'
-import MobileNav from './navigation/mobile-nav'
+import MobileNav from '../../components/navigation/mobile-nav'
 
 function Landing () {
   return (

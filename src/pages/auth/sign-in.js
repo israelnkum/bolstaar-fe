@@ -4,13 +4,18 @@ import TlaFormWrapper from '../../components/tla-form-wrapper'
 import { Button, Form, Input } from 'antd'
 import AuthBottomLink from './auth-bottom-link'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { handleAuthentication } from '../../actions/authenticate/Actions'
+import PropTypes from 'prop-types'
 
-function SignIn () {
+function SignIn (props) {
+  const { authenticateUser } = props
+
   return (
         <AuthLayout pageTitle={'Sign in to your account'}>
             <div>
-                <TlaFormWrapper buttonText={'Sign in'}>
-                    <Form.Item name="email" label="Email*"
+                <TlaFormWrapper afterSubmit={'/'} buttonText={'Sign in'} onSubmit={authenticateUser}>
+                    <Form.Item name="identifier" label="Email*"
                                rules={[
                                  {
                                    required: true,
@@ -48,4 +53,19 @@ function SignIn () {
   )
 }
 
-export default SignIn
+SignIn.propTypes = {
+  authenticateUser: PropTypes.func.isRequired
+}
+
+/**
+ *
+ * @param dispatch
+ * @returns {{authenticateUser: (function(*): *)}}
+ */
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authenticateUser: (values) => dispatch(handleAuthentication(values))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignIn)

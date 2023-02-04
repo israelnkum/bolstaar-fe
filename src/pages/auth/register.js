@@ -3,13 +3,16 @@ import AuthLayout from './auth-layout'
 import TlaFormWrapper from '../../components/tla-form-wrapper'
 import { Button, Form, Input } from 'antd'
 import AuthBottomLink from './auth-bottom-link'
+import { handleRegistration } from '../../actions/authenticate/Actions'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
-function Register () {
+function Register ({ registerUser }) {
   return (
         <AuthLayout pageTitle={'Create an account'}>
             <div>
-                <TlaFormWrapper buttonText={'Create my account'}>
-                    <Form.Item name="name" label="Name*"
+                <TlaFormWrapper afterSubmit={'/'} buttonText={'Create my account'} onSubmit={registerUser}>
+                    <Form.Item name="username" label="Name*"
                                rules={[
                                  {
                                    required: true,
@@ -80,4 +83,14 @@ function Register () {
   )
 }
 
-export default Register
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    registerUser: (values) => dispatch(handleRegistration(values))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Register)

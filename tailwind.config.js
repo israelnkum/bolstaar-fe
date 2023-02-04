@@ -27,6 +27,7 @@ module.exports = {
       backgroundImage: {
         'auth-bg': 'url("assets/images/auth-img.png")',
         'hero-image': 'url("assets/images/hero-image.JPG")',
+        'mini-banner': 'url("assets/images/mini-banner.png")',
         logo: 'url("assets/images/logo.svg")',
         'google-icon': 'url("assets/images/google.svg")',
         'wavy-line': 'url("assets/images/wavy-line.svg")',
@@ -44,7 +45,8 @@ module.exports = {
       },
       boxShadow: {
         '3xl': '0px 0px 88px rgba(85, 85, 85, 0.25);',
-        '4xl': '51px 51px 84px rgba(135, 140, 189, 0.06)'
+        '4xl': '51px 51px 84px rgba(135, 140, 189, 0.06)',
+        '5xl': '0px 0px 4px rgba(153, 153, 153, 0.15)'
       }
     }
   },

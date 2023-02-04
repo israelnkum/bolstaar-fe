@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import Landing from '../../landing'
 
-function AuthLayout ({ children, pageTitle }) {
+function AuthLayout ({ children, pageTitle, token }) {
   return (
-    <div className={'bg-white-000 auth-layout'}>
+    token !== null
+      ? <Landing/>
+      : <div className={'bg-white-000 auth-layout'}>
         <div className={'flex justify-between items-center h-screen'}>
             <div className={'bg-auth-bg bg-cover no-repeat w-1/2 h-full hidden md:block'}></div>
             <div className={'w-full md:w-1/2 flex justify-center items-center'}>
@@ -21,8 +25,22 @@ function AuthLayout ({ children, pageTitle }) {
 }
 
 AuthLayout.propTypes = {
-  children: PropTypes.node,
-  pageTitle: PropTypes.string
+  token: null
 }
 
-export default AuthLayout
+AuthLayout.propTypes = {
+  children: PropTypes.node,
+  pageTitle: PropTypes.string,
+  token: PropTypes.any
+}
+
+/**
+ *
+ * @param state
+ * @returns {{token: (null|*)}}
+ */
+const mapStateToProps = (state) => ({
+  token: state.loginReducer.authToken
+})
+
+export default connect(mapStateToProps)(AuthLayout)
