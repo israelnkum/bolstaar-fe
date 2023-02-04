@@ -45,7 +45,7 @@ function Index () {
             <div className={'overflow-auto'}>
                 <Categories/>
             </div>
-            <div className={'w-[375px] md:w-[734px] flex flex-wrap gap-x-8 gap-y-6 mt-6'}>
+            <div className={'w-[375px] md:w-[734px] flex flex-wrap gap-x-1.5 md:gap-x-8 gap-y-6 mt-6'}>
                 {
                     items.map((item, index) => (
                         <Product item={item} key={index}/>

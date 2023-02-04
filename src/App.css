@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "./assets/css/tla-modal.css";
-/*@import '~antd/dist/reset.css';*/
+@import "./assets/css/tla-confirm.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,7 +36,7 @@
     .btn-success-landing {
         @apply !bg-success-100 !text-white-000 ring-1 ring-success-100
         hover:bg-success-100 hover:text-white-000 !border-0 !font-bold
-        py-3 !h-12 !w-full md:!w-[151px];
+        py-3 !w-full md:!w-[151px];
     }
 
     .btn-light {
@@ -127,5 +126,13 @@
 
     .ant-tabs-tab-btn:hover {
         @apply !text-success-100;
+    }
+
+    .ant-form-item .ant-form-item-label >label {
+        @apply !text-gray-700;
+    }
+
+    .delete-label h3{
+        color: red !important;
     }
 }

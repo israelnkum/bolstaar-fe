@@ -3,11 +3,16 @@ import './App.css'
 import { PublicRoutes } from './components/routes/public-routes'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { ProtectedRoutes } from './components/routes/protected-routes'
 
 function App ({ authenticated }) {
   return (
         <div>
-            <PublicRoutes/>
+            {
+                authenticated
+                  ? <ProtectedRoutes/>
+                  : <PublicRoutes/>
+                }
         </div>
   )
 }

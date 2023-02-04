@@ -13,7 +13,7 @@ function Gallery () {
 
   return (
         <div>
-            <div className={'flex gap-x-7 flex-col md:flex-row'}>
+            <div className={'flex gap-x-7 flex-col md:flex-row mt-[58px]'}>
                 <div>
                     <div className={'flex flex-col md:flex-row gap-x-8 w-full md:w-[734px]'}>
                         <div className={'flex flex-row md:flex-col gap-x-8'}>

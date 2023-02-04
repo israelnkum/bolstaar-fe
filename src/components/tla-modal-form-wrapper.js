@@ -1,9 +1,8 @@
 import React from 'react'
-import { Button, Form } from 'antd'
+import { Form } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { TlaModal } from './pop-ups/tla-modal'
 import PropTypes from 'prop-types'
-import CloseModal from './close-modal'
 import { TlaError, TlaSuccess } from '../utils/messages'
 
 function TlaModalFormWrapper (props) {
@@ -41,15 +40,6 @@ function TlaModalFormWrapper (props) {
                 name="formName"
                 initialValues={initialValues}>
                 {children}
-                <Form.Item>
-                    <div className={'flex justify-end'}>
-                        <CloseModal />
-                        &nbsp;
-                        <Button size={'large'} type="primary" className={'bg-blue-400'} htmlType="submit">
-                            Submit
-                        </Button>
-                    </div>
-                </Form.Item>
             </Form>
         </TlaModal>
   )

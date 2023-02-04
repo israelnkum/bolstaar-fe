@@ -21,7 +21,9 @@ module.exports = {
     300: '#343535'
   },
   primary: {
+    50: '#EFF8FF',
     100: 'rgba(39, 21, 250, 0.08)',
+    500: '#2E90FA',
     700: '#0408E7'
   },
   violet: {
@@ -39,5 +41,8 @@ module.exports = {
   neutral: {
     100: '#F3F4F6',
     700: '#374151'
+  },
+  danger: {
+    100: '#FC3115'
   }
 }

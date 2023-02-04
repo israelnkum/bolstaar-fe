@@ -23,7 +23,7 @@ const PageCrumbs = ({ homePath }) => {
             const url = `/${pathSnippets.slice(0, index + 1).join('/')}`
             return (
                 <Breadcrumb.Item key={url} style={{ fontSize: index === 0 && 16 }}>
-                  <Link to={index === 0 ? homePath : url}>
+                  <Link to={url}>
                     {
                       capitalize(decodeURIComponent(pathSnippets[index]).replace('-', ' '))
                     }
@@ -37,7 +37,7 @@ const PageCrumbs = ({ homePath }) => {
 }
 
 PageCrumbs.defaultProps = {
-  homePath: '#'
+  homePath: '/'
 }
 
 PageCrumbs.propTypes = {

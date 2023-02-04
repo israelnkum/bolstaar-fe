@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Logo from '../../../assets/images/logo.svg'
+import Logo from '../../assets/images/logo.svg'
 import { Button, Drawer } from 'antd'
 import { FiMenu } from 'react-icons/fi'
-import { LandingPageMenus } from '../../../utils/menu-items'
+import { LandingPageMenus } from '../../utils/menu-items'
 import { Link } from 'react-router-dom'
 
 function MobileNav () {

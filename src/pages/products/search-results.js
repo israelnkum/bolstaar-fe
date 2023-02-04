@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import Categories from '../SingleProduct/details/related-products/categories'
 import Product from '../../components/product'
 import Boot from '../../assets/images/boot.png'
 import { Link, useOutletContext } from 'react-router-dom'
 
-function Index () {
+function SearchResults () {
   const items = [
     {
       name: 'Fertilizer',
@@ -41,18 +40,15 @@ function Index () {
   const { setTitle } = useOutletContext()
 
   useEffect(() => {
-    setTitle('Explore what we have to offer')
+    setTitle('We found 19 results for your search')
   }, [])
 
   return (
         <div>
-            <div className={'overflow-auto mt-6'}>
-                <Categories/>
-            </div>
-            <div className={'flex flex-wrap justify-center md:justify-start gap-x-[26px] gap-y-6 mt-6'}>
+            <div className={'flex flex-wrap gap-x-2 gap-y-6 mt-8'}>
                 {
-                    items.map((item, index) => (
-                        <Link to={'wallington-boots'} key={index}>
+                    items.map((item, SearchResults) => (
+                        <Link to={'/products/wallington-boots'} key={SearchResults}>
                             <Product item={item}/>
                         </Link>
                     ))
@@ -62,4 +58,4 @@ function Index () {
   )
 }
 
-export default Index
+export default SearchResults

@@ -36,7 +36,7 @@ function SearchTools () {
                         </Form.Item>
                     </Col>
                     <Col xs={24} sm={12} md={8} lg={4} className={'search-col-item'}>
-                        <Link to={'/categories/wallington-boots'}>
+                        <Link to={'/products/search-results'}>
                             <ShadowButton buttonText={'Search now'} buttonType={'submit'}/>
                         </Link>
                     </Col>

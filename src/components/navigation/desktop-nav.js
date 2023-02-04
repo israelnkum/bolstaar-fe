@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { LandingPageMenus } from '../../../utils/menu-items'
+import { LandingPageMenus } from '../../utils/menu-items'
 import { Link, useLocation } from 'react-router-dom'
-import LogoWhite from '../../../assets/images/logo-white.png'
-import LogoDark from '../../../assets/images/logo.svg'
+import LogoWhite from '../../assets/images/logo-white.png'
+import LogoDark from '../../assets/images/logo.svg'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import NavProfile from './nav-profile'
 
 /**
  *
@@ -42,7 +43,7 @@ function DesktopNav ({ token }) {
                                     Sign Up
                                 </Link>
                             </div>
-                          : 'Inside'
+                          : <NavProfile/>
                     }
                 </div>
             </div>

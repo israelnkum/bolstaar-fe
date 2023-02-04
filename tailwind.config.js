@@ -27,6 +27,7 @@ module.exports = {
       backgroundImage: {
         'auth-bg': 'url("assets/images/auth-img.png")',
         'hero-image': 'url("assets/images/hero-image.JPG")',
+        'mini-banner': 'url("assets/images/mini-banner.png")',
         logo: 'url("assets/images/logo.svg")',
         'google-icon': 'url("assets/images/google.svg")',
         'wavy-line': 'url("assets/images/wavy-line.svg")',
