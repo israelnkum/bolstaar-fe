@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Star from '../assets/images/star.png'
 
 function Product ({ item }) {
   return (
@@ -11,11 +12,14 @@ function Product ({ item }) {
             <div className={'px-4 py-3'}>
                 <h6>{item.name}</h6>
                 <div className={'flex justify-between'}>
-                    <h6 className={'text-base font-semibold'}>
+                    <h6 className={'flex flex-wrap gap-x-2 items-center text-sm md:text-base font-semibold'}>
                         {item.price}
-                        <span className={'text-gray-500 text-xs ml-2'}>per day</span>
+                        <span className={'text-gray-500 text-xs'}>per day</span>
                     </h6>
-                    <span className={''}>Star</span>
+                    <span className={'text-sm text-gray-600 flex items-center justify-center font-medium'}>
+                        <img alt={'Star'} className={'mr-1.5'} src={Star}/>
+                        (4.8)
+                    </span>
                 </div>
             </div>
         </div>
