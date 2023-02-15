@@ -2,17 +2,20 @@ import { combineReducers } from 'redux'
 import sessionStorage from 'redux-persist/lib/storage/session'
 import { persistReducer } from 'redux-persist'
 import loginReducer from './login-reducer'
+import productsReducer from './products-reducer'
 
 const persistConfig = {
   key: 'root',
   storage: sessionStorage,
   whitelist: [
-    'loginReducer'
+    'loginReducer',
+    'productsReducer'
   ]
 }
 
 const appReducer = combineReducers({
-  loginReducer
+  loginReducer,
+  productsReducer
 })
 
 const rootReducer = (state, action) => {

@@ -21,7 +21,8 @@ function DesktopNav ({ token }) {
     setLogo(location.pathname === '/' ? LogoWhite : LogoDark)
   }, [location])
   return (
-        <div className={`hidden md:block ${location.pathname !== '/' ? ' border-b border-b-white-700' : ''}`}>
+        <div className={`hidden md:block max-w-screen-2xl mx-auto
+         ${location.pathname !== '/' ? ' border-b border-b-white-700' : ''}`}>
             <div className={'mx-[112px] h-[72px] flex justify-between items-center'}>
                 <div>
                     <img src={logo} alt={'Bolstaar'}/>

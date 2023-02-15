@@ -2,8 +2,8 @@ import { Types } from '../actions/authenticate/Types'
 
 const initialState = {
   authUser: {},
-  authToken: 'null',
-  authenticated: true
+  authToken: null,
+  authenticated: false
 }
 
 /**

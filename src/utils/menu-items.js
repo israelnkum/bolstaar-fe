@@ -10,13 +10,13 @@ export const LandingPageMenus = [
   {
     title: 'Careers',
     link: '/careers'
-  },
-  {
-    title: 'Training',
-    link: '/training'
-  },
-  {
-    title: 'Contact Us',
-    link: '/contact-us'
   }
+  // {
+  //   title: 'Training',
+  //   link: '/training'
+  // },
+  // {
+  //   title: 'Contact Us',
+  //   link: '/contact-us'
+  // }
 ]

@@ -1,46 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Categories from '../SingleProduct/details/related-products/categories'
 import Product from '../../components/product'
-import Boot from '../../assets/images/boot.png'
 import { Link, useOutletContext } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { handleGetAllProducts } from '../../actions/products/Actions'
+import PropTypes from 'prop-types'
+import { Spin } from 'antd'
 
-function Index () {
-  const items = [
-    {
-      name: 'Fertilizer',
-      price: 'GHC 50',
-      image: Boot
-    },
-    {
-      name: 'Wheel barrow',
-      price: 'GHC 50',
-      image: Boot
-    },
-    {
-      name: 'Water Pump',
-      price: 'GHC 50',
-      image: Boot
-    },
-    {
-      name: 'Water Pump',
-      price: 'GHC 50',
-      image: Boot
-    },
-    {
-      name: 'Fertilizer',
-      price: 'GHC 50',
-      image: Boot
-    },
-    {
-      name: 'Fertilizer',
-      price: 'GHC 50',
-      image: Boot
-    }
-  ]
+function Products (props) {
+  const { products, getProducts } = props
+  const [loading, setLoading] = useState(true)
 
   const { setTitle } = useOutletContext()
 
   useEffect(() => {
+    getProducts().then((res) => {
+      setLoading(false)
+    }).catch(() => setLoading(false))
     setTitle('Explore what we have to offer')
   }, [])
 
@@ -49,17 +25,32 @@ function Index () {
             <div className={'overflow-auto mt-6'}>
                 <Categories/>
             </div>
-            <div className={'flex flex-wrap justify-center md:justify-start gap-x-[26px] gap-y-6 mt-6'}>
-                {
-                    items.map((item, index) => (
-                        <Link to={'wallington-boots'} key={index}>
-                            <Product item={item}/>
-                        </Link>
-                    ))
-                }
+            <div className={'flex flex-wrap justify-center md:justify-start gap-x-[20px] gap-y-6 mt-6'}>
+                <Spin spinning={loading}>
+                    {
+                        products.data.map((item, Products) => (
+                            <Link to={'wallington-boots'} key={Products}>
+                                <Product product={item}/>
+                            </Link>
+                        ))
+                    }
+                </Spin>
             </div>
         </div>
   )
 }
 
-export default Index
+Products.propTypes = {
+  products: PropTypes.object.isRequired,
+  getProducts: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  products: state.productsReducer.products
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getProducts: () => dispatch(handleGetAllProducts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Products)

@@ -19,14 +19,16 @@ function SearchResultLayout () {
                     </h3>
                 </div>
             }
-            <div className={'mx-4 md:mx-[112px] mb-[300px]'}>
-                {
-                    hasCrumbs &&
-                    <div className="mt-[30px]">
-                        <PageCrumbs/>
-                    </div>
-                }
-                <Outlet context={{ setTitle, setHasCrumbs }}/>
+            <div className={'max-w-screen-2xl mx-auto'}>
+                <div className={'w-full md:w-[1219px] mx-4 md:mx-auto mb-[300px]'}>
+                    {
+                        hasCrumbs &&
+                        <div className="mt-[30px]">
+                            <PageCrumbs/>
+                        </div>
+                    }
+                    <Outlet context={{ setTitle, setHasCrumbs }}/>
+                </div>
             </div>
             <Footer/>
         </div>
