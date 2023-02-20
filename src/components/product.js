@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Star from '../assets/images/star.png'
 
-function Product ({ item }) {
+function Product ({ product }) {
+  const item = product.attributes
   return (
         <div className={'min-h-[249px] w-[160px] md:w-[223px] shadow-5xl rounded-2xl border'}>
             <div>
@@ -11,11 +13,14 @@ function Product ({ item }) {
             <div className={'px-4 py-3'}>
                 <h6>{item.name}</h6>
                 <div className={'flex justify-between'}>
-                    <h6 className={'text-base font-semibold'}>
-                        {item.price}
-                        <span className={'text-gray-500 text-xs ml-2'}>per day</span>
+                    <h6 className={'flex flex-wrap gap-x-2 items-center text-sm md:text-base font-semibold'}>
+                        {item.price_per_day}
+                        <span className={'text-gray-500 text-xs'}>per day</span>
                     </h6>
-                    <span className={''}>Star</span>
+                    <span className={'text-sm text-gray-600 flex items-center justify-center font-medium'}>
+                        <img alt={'Star'} className={'mr-1.5'} src={Star}/>
+                        ({item.rating})
+                    </span>
                 </div>
             </div>
         </div>
@@ -24,6 +29,6 @@ function Product ({ item }) {
 }
 
 Product.propTypes = {
-  item: PropTypes.object.isRequired
+  product: PropTypes.object.isRequired
 }
 export default Product

@@ -32,4 +32,5 @@ const NavProfile = () => (
         </a>
     </Dropdown>
 )
+
 export default NavProfile

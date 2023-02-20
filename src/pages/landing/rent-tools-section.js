@@ -3,13 +3,13 @@ import ShadowButton from '../../components/shadow-button'
 import WavyLine from '../../components/wavy-line'
 import ColoredHeader from '../../assets/images/rent-a-tool/header.svg'
 import Locations from '../../assets/images/rent-a-tool/location-mobile.png'
+import { Link } from 'react-router-dom'
 
 function RentToolsSection () {
   const LeftContent = () => (
         <div>
             <h3 className={'mt-10 font-semibold md:font-bold text-[26px] md:text-5xl leading-9 md:leading-[58px]' +
-                ' text-center' +
-                ' md:text-left text-black-100 tracking-[-1.92px] w-full md:w-[463px]'}>
+                ' text-center md:text-left text-black-100 tracking-[-1.92px] w-full md:w-[463px]'}>
                 Rent tools that help your business grow
             </h3>
             <div className={'mx-[15px]'}>
@@ -25,7 +25,9 @@ function RentToolsSection () {
             </div>
             <div className={'flex justify-center md:justify-start'}>
                 <div className={'w-[151px]'}>
-                    <ShadowButton buttonText={'Try it out'}/>
+                    <Link to={'/sign-in'}>
+                        <ShadowButton buttonText={'Try it out'}/>
+                    </Link>
                 </div>
             </div>
         </div>
