@@ -46,3 +46,15 @@ export function updateProduct (payload) {
     payload
   }
 }
+
+/**
+ *
+ * @param payload
+ * @returns {{payload, type: string}}
+ */
+export function getProduct (payload) {
+  return {
+    type: Types.GET_PRODUCT,
+    payload
+  }
+}

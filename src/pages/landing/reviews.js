@@ -44,8 +44,11 @@ function Reviews () {
                     </div>
                     <div>
                         <p className={'text-gray-600 text-[18px] mt-10'}>
-                            &quot;This app did a great job! My new website is so much more professional,
-                            good looking and easier to work with than my old site.&quot;
+                            &quot;I have been using the farming app for a while now and I must say, I am impressed.
+                            The app has been very helpful in keeping me updated on the weather forecast,
+                            pests and diseases that could affect my crops, and even providing me with tips
+                            on how to improve my yields. I also had a great time getting the right tools to
+                            complete my project&quot;
                         </p>
                     </div>
                 </div>

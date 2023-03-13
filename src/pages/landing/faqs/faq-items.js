@@ -3,16 +3,26 @@ import { Collapse } from 'antd'
 import { FiPlus } from 'react-icons/fi'
 
 const { Panel } = Collapse
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`
-const FaqItems = () => {
-  const onChange = (key) => {
-    console.log(key)
-  }
 
+const data = [
+  {
+    title: 'When will I be able to rent?',
+    text: 'Any day within the week, our technology helps us keep track of your request 24/7'
+  },
+  {
+    title: 'What do I need to get started?',
+    text: 'Your firstname and mobile number'
+  },
+  {
+    title: 'How can I use the app?',
+    text: 'Our application is available on computer and mobile, you can just head to Bolstaar.com and begin'
+  },
+  {
+    title: 'What can i use this app for?',
+    text: 'For rent of farm equipment like tractors and other products'
+  }
+]
+const FaqItems = () => {
   const genExtra = () => (
         <FiPlus
             className={'text-success-100'}
@@ -22,24 +32,14 @@ const FaqItems = () => {
         />
   )
   return (
-        <Collapse bordered={false}
-                  ghost
-                  accordion onChange={onChange}>
-            <Panel showArrow={false} header="When will I be able to rent?" key="1" extra={genExtra()}>
-                <p>{text}</p>
-            </Panel>
-            <Panel showArrow={false} header="What do I need to get started?" key="2" extra={genExtra()}>
-                <p>{text}</p>
-            </Panel>
-            <Panel showArrow={false} header="How can I use this app?" key="3" extra={genExtra()}>
-                <p>{text}</p>
-            </Panel>
-            <Panel showArrow={false} header="What can I use this app for?" key="4" extra={genExtra()}>
-                <p>{text}</p>
-            </Panel>
-            <Panel showArrow={false} header="How do I reset my password?" key="5" extra={genExtra()}>
-                <p>{text}</p>
-            </Panel>
+        <Collapse bordered={false} ghost accordion>
+            {
+                data.map(({ title, text }, index) => (
+                    <Panel showArrow={false} header={title} key={index} extra={genExtra()}>
+                        <p>{text}</p>
+                    </Panel>
+                ))
+            }
         </Collapse>
   )
 }

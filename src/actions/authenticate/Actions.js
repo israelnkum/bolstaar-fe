@@ -30,13 +30,9 @@ export const handleAuthenticateUser = () => (dispatch) => {
 
 export const handleLogout = () => (dispatch) => {
   return new Promise((resolve, reject) => {
-    api().post('/logout').then((res) => {
-      sessionStorage.removeItem('persist:root')
-      dispatch(removeAuth())
-      resolve()
-    }).catch((err) => {
-      reject(err)
-    })
+    sessionStorage.removeItem('persist:root')
+    dispatch(removeAuth())
+    resolve()
   })
 }
 
@@ -121,6 +117,20 @@ export const handleForgotPassword = (data) => (dispatch) => {
   })
 }
 
+export const handleGetMyProfile = (token) => () => {
+  return new Promise((resolve, reject) => {
+    api(false).get('/users/me', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then(() => {
+      resolve()
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+}
+
 export const handleEmailVerification = (url, token) => () => {
   return new Promise((resolve, reject) => {
     api(true).get(url).then(() => {
@@ -146,7 +156,6 @@ export const handleResendEmailVerification = () => (dispatch) => {
     api().post('/auth/email/verify/resend')
       .then((res) => {
         resolve(res)
-        console.log(res.data)
       }).catch((err) => {
         reject(err)
       })

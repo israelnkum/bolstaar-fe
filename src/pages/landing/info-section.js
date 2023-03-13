@@ -13,10 +13,8 @@ function InfoSection () {
                     Distance is not a barrier. We get your tools delivered to you easily .
                 </h3>
                 <p className={'text-gray-600 text-sm md:text-[18px] mt-3 md:mt-7 mb-9 md:mb-[190px]' +
-                    ' max-w-[553px] mx-8 md:mx-auto'}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor
+                    ' max-w-[600px] mx-8 md:mx-auto'}>
+                    Get the best tools for your farm project to increase yield up to 100%
                 </p>
             </div>
         </div>

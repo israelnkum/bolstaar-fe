@@ -41,8 +41,7 @@ function WhatToExpect () {
 
   const SubText = () => (
         <p className={'text-gray-600 text-[13px] md:text-[18px] leading-[20px] md:leading-[29px] mt-0 md:mt-[33px]'}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse varius enim in eros elementum tristique.
+            Our team lives by these standards and we are keen on delivering to our clients satisfaction
         </p>
   )
 
