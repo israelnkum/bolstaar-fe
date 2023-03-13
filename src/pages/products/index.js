@@ -14,7 +14,7 @@ function Products (props) {
   const { setTitle } = useOutletContext()
 
   useEffect(() => {
-    getProducts().then((res) => {
+    getProducts().then(() => {
       setLoading(false)
     }).catch(() => setLoading(false))
     setTitle('Explore what we have to offer')
@@ -28,8 +28,10 @@ function Products (props) {
             <div className={'flex flex-wrap justify-center md:justify-start gap-x-[20px] gap-y-6 mt-6'}>
                 <Spin spinning={loading}>
                     {
-                        products.data.map((item, Products) => (
-                            <Link to={'wallington-boots'} key={Products}>
+                        products.data.map((item, index) => (
+                            <Link
+                                to={item.attributes.name.replace(' ', '-')}
+                                key={index} state={{ productId: item.id }}>
                                 <Product product={item}/>
                             </Link>
                         ))

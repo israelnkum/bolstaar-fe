@@ -9,8 +9,6 @@ function Company () {
           </h6>
           <div className={'flex gap-10'}>
               <div className={'flex flex-col gap-y-6'}>
-                  <Link to={'/about-us'}>About Us</Link>
-                  <Link to={'/features'}>Features</Link>
                   <Link to={'/careers'}>Careers</Link>
                   <Link to={'/contact'}>Contact</Link>
               </div>
@@ -18,7 +16,6 @@ function Company () {
                   <Link to={'/about-us'}>Tools</Link>
                   <Link to={'/features'}>Help</Link>
                   <Link to={'/careers'}>Privacy Policy</Link>
-                  <Link to={'/contact'}>FAQs</Link>
               </div>
           </div>
       </div>

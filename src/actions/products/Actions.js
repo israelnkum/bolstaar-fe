@@ -1,5 +1,5 @@
 import api from '../../utils/api'
-import { addProduct, allProducts, deleteProduct, updateProduct } from './ActionCreators'
+import { addProduct, allProducts, deleteProduct, getProduct, updateProduct } from './ActionCreators'
 
 /**
  * Store a newly created resource in storage.
@@ -59,6 +59,22 @@ export const handleDeleteProduct = (id) => (dispatch) => {
   return new Promise((resolve, reject) => {
     api().delete(`/product/${id}`).then((res) => {
       dispatch(deleteProduct(id))
+      resolve(res)
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+}
+
+/**
+ * Remove the specified resource from storage.
+ * @param id
+ * @returns {function(*): Promise<unknown>}
+ */
+export const handleGetProduct = (id) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    api(true).get(`/products/${id}`).then((res) => {
+      dispatch(getProduct(res.data))
       resolve(res)
     }).catch((err) => {
       reject(err)

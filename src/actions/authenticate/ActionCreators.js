@@ -30,3 +30,9 @@ export const verifyEmail = () => {
     type: Types.VERIFY_EMAIL
   }
 }
+
+export const getMyProfile = () => {
+  return {
+    type: Types.GET_MY_PROFILE
+  }
+}

@@ -32,8 +32,8 @@ export const ProtectedRoutes = () => {
                 <Route element={<ResetPassword/>} path={'/reset-password'}/>
                 <Route path={'/products'} element={<SearchResultLayout/>}>
                     <Route element={<Products/>} index/>
-                    <Route element={<SearchResults/>} path={'search-results'}/>
                     <Route element={<SingleProduct/>} path={':item'}/>
+                    <Route element={<SearchResults/>} path={'search-results'}/>
                     <Route element={<Checkout/>} path={':item/checkout'}/>
                 </Route>
                 <Route path={'/careers'} element={<SearchResultLayout/>}>

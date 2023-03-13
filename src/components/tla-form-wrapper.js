@@ -1,15 +1,17 @@
-import React from 'react'
-import { Button, Form } from 'antd'
+import React, { useState } from 'react'
+import { Button, Form, Spin } from 'antd'
 import PropTypes from 'prop-types'
 import { TlaError, TlaSuccess } from '../utils/messages'
 import { useNavigate } from 'react-router-dom'
 
 function TlaFormWrapper (props) {
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const [form] = Form.useForm()
   const { onSubmit, initialValues, children, file, btnBlock, buttonText, afterSubmit } = props
 
   const submit = (values) => {
+    setLoading(true)
     const formData = new FormData()
 
     // eslint-disable-next-line no-unused-expressions
@@ -22,35 +24,39 @@ function TlaFormWrapper (props) {
     }
 
     onSubmit(formData).then(() => {
+      setLoading(false)
       TlaSuccess()
       form.resetFields()
       afterSubmit && navigate(afterSubmit)
     }).catch((error) => {
+      setLoading(false)
       TlaError(error.response.data.error.message)
     })
   }
 
   return (
-        <Form
-            form={form}
-            onFinish={(values) => {
-              submit(values)
-            }}
-            layout="vertical"
-            name="formName"
-            requiredMark={false}
-            initialValues={initialValues}>
+        <Spin spinning={loading}>
+          <Form
+              form={form}
+              onFinish={(values) => {
+                submit(values)
+              }}
+              layout="vertical"
+              name="formName"
+              requiredMark={false}
+              initialValues={initialValues}>
             {children}
             <div>
-                <Button
-                    size={'large'}
-                    block={btnBlock}
-                    className={'btn-success'}
-                    htmlType="submit">
-                    {buttonText}
-                </Button>
+              <Button
+                  size={'large'}
+                  block={btnBlock}
+                  className={'btn-success'}
+                  htmlType="submit">
+                {buttonText}
+              </Button>
             </div>
-        </Form>
+          </Form>
+        </Spin>
   )
 }
 

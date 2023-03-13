@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Form, Input, Row } from 'antd'
 import ShadowButton from '../../components/shadow-button'
+import { connect } from 'react-redux'
+import { handleGetMyProfile } from '../../actions/authenticate/Actions'
 
-function General () {
+// eslint-disable-next-line react/prop-types
+function General ({ getMyProfile, authToken }) {
+  useEffect(() => {
+    getMyProfile(authToken).then((res) => {
+      console.log(res.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
   return (
         <Form layout={'vertical'}>
             <Row>
@@ -33,4 +43,12 @@ function General () {
   )
 }
 
-export default General
+const mapStateToProps = (state) => ({
+  authToken: state.loginReducer.authToken
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  getMyProfile: (token) => dispatch(handleGetMyProfile(token))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(General)
