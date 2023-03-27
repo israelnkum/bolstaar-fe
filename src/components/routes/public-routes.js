@@ -11,6 +11,7 @@ import Checkout from '../../pages/checkout'
 import SearchResultLayout from '../../pages/SingleProduct/search-result-layout'
 import Products from '../../pages/products'
 import SearchResults from '../../pages/products/search-results'
+import Careers from '../../pages/careers'
 
 export const PublicRoutes = () => {
   return (
@@ -26,6 +27,9 @@ export const PublicRoutes = () => {
                     <Route element={<SearchResults/>} path={'search-results'}/>
                     <Route element={<SingleProduct/>} path={':item'}/>
                     <Route element={<Checkout/>} path={':item/checkout'}/>
+                </Route>
+                <Route path={'/careers'} element={<SearchResultLayout/>}>
+                    <Route index element={<Careers/>}/>
                 </Route>
                 <Route element={<NoResults/>} path={'/nothing-found'}/>
                 <Route path={'*'} element={<>not found</>}>
