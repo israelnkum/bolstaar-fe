@@ -23,7 +23,7 @@ export const handleAddProduct = (data) => (dispatch) => {
  */
 export const handleGetAllProducts = (pageNumber = 1) => (dispatch) => {
   return new Promise((resolve, reject) => {
-    api(true).get('/products').then((res) => {
+    api(true).get('/products?populate=*').then((res) => {
       dispatch(allProducts(res.data))
       resolve(res)
     }).catch((err) => {

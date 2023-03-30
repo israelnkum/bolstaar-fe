@@ -1,12 +1,13 @@
 import React from 'react'
 import AuthLayout from './auth-layout'
 import TlaFormWrapper from '../../components/tla-form-wrapper'
-import { Button, Form, Input } from 'antd'
+import { Form, Input } from 'antd'
 import AuthBottomLink from './auth-bottom-link'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleAuthentication } from '../../actions/authenticate/Actions'
 import PropTypes from 'prop-types'
+import GoogleLogin from './google-login'
 
 function SignIn (props) {
   const { authenticateUser } = props
@@ -40,12 +41,7 @@ function SignIn (props) {
                     </div>
                 </TlaFormWrapper>
                 <div className={'mb-3'}>
-                    <a>
-                        <Button size={'large'} className={'mt-4 flex justify-center items-center gap-x-3'} block>
-                            <div className={'bg-google-icon h-6 w-6'}></div>
-                            Sign up with Google
-                        </Button>
-                    </a>
+                    <GoogleLogin/>
                 </div>
                 <AuthBottomLink text={'Don’t have an account?'} link={'/sign-up'} linkText={'Sign up'}/>
             </div>

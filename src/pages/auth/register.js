@@ -1,11 +1,12 @@
 import React from 'react'
 import AuthLayout from './auth-layout'
 import TlaFormWrapper from '../../components/tla-form-wrapper'
-import { Button, Form, Input } from 'antd'
+import { Form, Input } from 'antd'
 import AuthBottomLink from './auth-bottom-link'
 import { handleRegistration } from '../../actions/authenticate/Actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import GoogleLogin from './google-login'
 
 function Register ({ registerUser }) {
   return (
@@ -70,12 +71,7 @@ function Register ({ registerUser }) {
                     </Form.Item>
                 </TlaFormWrapper>
                 <div className={'mb-4'}>
-                    <a>
-                        <Button size={'large'} className={'mt-4 flex justify-center items-center gap-x-3'} block>
-                            <div className={'bg-google-icon h-6 w-6'}></div>
-                            Sign up with Google
-                        </Button>
-                    </a>
+                    <GoogleLogin/>
                 </div>
                 <AuthBottomLink text={'Already have an account?'} link={'/'} linkText={'Sign in'}/>
             </div>

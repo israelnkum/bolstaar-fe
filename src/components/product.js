@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Star from '../assets/images/star.png'
-import Boot from '../assets/images/boot.png'
 
 function Product ({ product }) {
   const item = product.attributes
   return (
         <div className={'min-h-[249px] w-[160px] md:w-[223px] shadow-5xl rounded-2xl border'}>
             <div>
-                <img src={Boot} className={'w-[160px] md:w-[223px] h-[127px] md:h-[159px] rounded-t-2xl'}
+                <img src={`https://bolstaar-new-admin.herokuapp.com/api${item.images?.data?.[0].attributes.url}`}
+                     className={'w-[160px] md:w-[223px] h-[127px] md:h-[159px] rounded-t-2xl'}
                      alt={item.name}/>
             </div>
             <div className={'px-4 py-3'}>

@@ -22,6 +22,7 @@ export const PublicRoutes = () => {
                 <Route element={<Register/>} path={'/sign-up'}/>
                 <Route element={<ForgotPassword/>} path={'/forgot-password'}/>
                 <Route element={<ResetPassword/>} path={'/reset-password'}/>
+                <Route element={<ResetPassword/>} path={'/connect/:provider/redirect'}/>
                 <Route path={'/products'} element={<SearchResultLayout/>}>
                     <Route element={<Products/>} index/>
                     <Route element={<SearchResults/>} path={'search-results'}/>
