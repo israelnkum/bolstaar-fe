@@ -28,6 +28,17 @@ export const handleAuthenticateUser = () => (dispatch) => {
   })
 }
 
+export const handleGoogleLogin = () => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    api().get('/connect/google').then((response) => {
+      // dispatch(authenticate(response.data))
+      resolve(response)
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+}
+
 export const handleLogout = () => (dispatch) => {
   return new Promise((resolve, reject) => {
     sessionStorage.removeItem('persist:root')
